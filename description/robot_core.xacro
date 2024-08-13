@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
-    <xacro:include filename="inertial_macros.xacro"/>>
+    <xacro:include filename="inertial_macros.xacro"/>
 
     <material name="white">
         <color rgba="1 1 1 1" />
@@ -117,9 +117,15 @@
             <geometry>
                 <sphere radius="0.05"/>
             </geometry>
+            <material name="black"/>
         </collision>
         <xacro:inertial_sphere mass="0.1" radius="0.05">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_sphere>
     </link>
+    <gazebo reference="caster_wheel">
+        <material>Gazebo/Black</material>/
+        <mu1>0.001</mu1>
+        <mu2>0.001</mu2>
+    </gazebo>
 </robot>
